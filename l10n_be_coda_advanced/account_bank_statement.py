@@ -3,7 +3,7 @@
 #
 #    Odoo, Open Source Management Solution
 #
-#    Copyright (c) 2010-now Noviat nv/sa (www.noviat.com).
+#    Copyright (c) 2010-2015 Noviat nv/sa (www.noviat.com).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -27,5 +27,5 @@ class account_bank_statement(models.Model):
     _inherit = 'account.bank.statement'
 
     coda_id = fields.Many2one(
-        'account.coda', string='CODA Data File', ondelete='cascade')
+        'account.coda', string='CODA Data File')
     coda_note = fields.Text('CODA Notes')

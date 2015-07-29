@@ -3,7 +3,7 @@
 #
 #    Odoo, Open Source Management Solution
 #
-#    Copyright (c) 2010-now Noviat nv/sa (www.noviat.com).
+#    Copyright (c) 2010-2015 Noviat nv/sa (www.noviat.com).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -35,7 +35,7 @@ class coda_bank_account(orm.Model):
         obj_cba = self.browse(cr, uid, ids[0], context=context)
         if (obj_cba.state == 'normal') and obj_cba.journal_id:
             if obj_cba.journal_id.currency and \
-                    (obj_cba.currency != obj_cba.journal_id.currency):
+                    (obj_cba.currency_id != obj_cba.journal_id.currency):
                 return False
             if not obj_cba.journal_id.currency and \
                     (obj_cba.currency_id != obj_cba.company_id.currency_id):
@@ -482,12 +482,12 @@ class coda_bank_statement_line(orm.Model):
         'date': fields.date('Entry Date', required=True),
         'val_date': fields.date('Valuta Date'),
         'type': fields.selection([
-            ('supplier','Supplier'),
-            ('customer','Customer'),
-            ('general','General'),
-            ('globalisation','Globalisation'),
-            ('information','Information'),
-            ('communication','Free Communication'),
+            ('supplier', 'Supplier'),
+            ('customer', 'Customer'),
+            ('general', 'General'),
+            ('globalisation', 'Globalisation'),
+            ('information', 'Information'),
+            ('communication', 'Free Communication'),
             ], 'Type', required=True),
         'globalisation_level': fields.integer(
             'Globalisation Level',

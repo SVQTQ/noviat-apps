@@ -3,7 +3,7 @@
 #
 #    Odoo, Open Source Management Solution
 #
-#    Copyright (c) 2010-now Noviat nv/sa (www.noviat.com).
+#    Copyright (c) 2010-2015 Noviat nv/sa (www.noviat.com).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,7 +22,7 @@
 
 {
     'name': 'Belgium - Advanced CODA statements Import',
-    'version': '0.1',
+    'version': '0.4',
     'license': 'AGPL-3',
     'author': 'Noviat',
     'website': 'http://www.noviat.com',
@@ -34,7 +34,6 @@
         'l10n_be_invoice_bba',
         'l10n_be_partner',
         'account_bank_statement_advanced',
-        'web_fix_binaryfile',  # fix onchange on binary fields
     ],
     'data': [
         'security/ir.model.access.csv',
